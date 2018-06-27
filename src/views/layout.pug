@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title Home
+        link(rel="stylesheet" href= "https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css")
+        nav.navbar.navbar-expand-lg.navbar-light.bg-dark
+            .container
+          
+                ul.navbar-nav.mr-aut
+                    li.nav-item
+                        a.nav-link.text-light(href='/') Home
+                    li.nav-item
+                        a.nav-link.text-light(href='/book') Book
+                    li.nav-item
+                        a.nav-link.text-light(href='/book/add')  Add Book 
+                
+                ul.nav.navbar-nav.navbar-right
+                    if user
+                        li.nav-item
+                            a.nav-link.text-light(href="/user/logout") Logout
+                    else
+                        li.nav-item
+                            a.nav-link.text-light(href='/user/register') Register
+                        li.nav-item
+                            a.nav-link.text-light(href='/user/login') Login
+    .container
+        br
+        != messages('message', locals)            
+        block content
+        br 
+        hr
+        footer
+            p Copyright & copy

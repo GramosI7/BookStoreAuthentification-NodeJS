@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    h1 Add Book
+
+    form(method="POST", action="/book/add" enctype="multipart/form-data")
+        .form-group
+            label Name
+            input.form-control(name="title", type="text", required)
+        .form-group
+            label Author
+            input.form-control(name="author", type="text")
+        .form-group
+            label Years
+            input.form-control(name="years", type="number")
+        .form-group
+            label Description
+            textarea.form-control(name="description", type="text")
+        .form-group
+            label Description
+            input.form-control(name="img", type="file", required)
+        input.btn.btn-primary(type="submit", value="Submit")

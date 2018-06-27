@@ -1,0 +1,7 @@
+extends layout
+
+block content
+    h1 List Book
+    each book, i in books
+        li.list-group-item
+            a(href=`/book/${book._id}`)=book.title

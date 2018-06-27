@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1=books.title
+    h3=books.author
+    h4=books.years
+    p=books.description
+    img(src=`../uploads/${books.img}`)
+    br
+    a.btn.btn-primary(href=`/book/edit/${books._id}`) Edit
+    a.btn.btn-danger(href=`/book/delete/${books._id}`) Delete

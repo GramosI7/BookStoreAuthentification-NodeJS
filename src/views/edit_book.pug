@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    h1 Editer un Livre
+    form(method="POST", action=`/book/edit/${books._id}`)
+        #form-group
+            label Title
+            input.form-control(name="title", type="text", value=books.title)
+        #form-group
+            label Author
+            input.form-control(name="author", type="text", value=books.author)
+        .form-group
+            label Year
+            input.form-control(name="years", type="text", value=books.years)
+        .form-group
+            label Description
+            textarea.form-control(name="description", type="text")= books.description
+        br
+        input.btn.btn-primary(type="submit", value="Submit")
+
+
